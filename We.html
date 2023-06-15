@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TE AMO ALESSANDRA</title>
+  <style>
+    /* Estilos CSS aquí */
+    :root {
+      --contador-scale: 1;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-image: url('https://s2.best-wallpaper.net/wallpaper/1366x768/1902/Garden-colorful-tulips-trees_1366x768.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 20px;
+    }
+    .contador {
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transform: scale(var(--contador-scale));
+      transform-origin: top left;
+      margin-bottom: 20px;
+    }
+    .recuadro-continuar {
+      background-color: white;
+      width: 500px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: navy !important;
+      text-shadow: 2px 2px 4px rgb(0, 255, 234);
+      font-family: "Georgia", serif;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #ff0000;
+      text-align: center;
+    }
+    span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ce2406da;
+      text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.712);
+      animation-name: caida;
+      animation-duration: 1s;
+    }
+    @keyframes caida {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(50%);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: yellow;
+      border-radius: 10px;
+    }
+    /* Estilos para los íconos de redes sociales */
+    .redes-sociales {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .redes-sociales h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff;
+      background-color: #ce2406da;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .redes-sociales a {
+      display: block;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      text-decoration: none;
+      color: #000;
+      text-align: center;
+      line-height: 60px;
+      transition: background-color 0.3s ease;
+    }
+    .redes-sociales a:hover {
+      background-color: #ddd;
+    }
+    .redes-sociales img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .boton-continuar {
+      background-color: limegreen;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .boton-continuar:hover {
+      background-color: lime;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Íconos de redes sociales -->
+    <div class="redes-sociales">
+      <h2 style="margin-top: 0;">Las redes sociales de la persona más hermosa que conozco</h2>
+      <a href="https://www.instagram.com/_alec_stark_" target="_blank">
+        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/17/instagram-6338401_640.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/alessandra.ruiz.925" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook">
+      </a>
+    </div>
+
+    <!-- Contador superior -->
+    <div class="contador contador-superior">
+      <h1>Tiempo de Espera para Cumpleaños de Alessandra</h1>
+      <p>Días: <span id="dias"></span></p>
+      <p>Horas: <span id="horas"></span></p>
+      <p>Minutos: <span id="minutos"></span></p>
+      <p>Segundos: <span id="segundos"></span></p>
+    </div>
+
+    <!-- Contador inferior -->
+    <div class="contador contador-inferior">
+      <h1>Te amo, espero que te haya gustado. Sabes, había tenido muchas ilusiones de hacerte algo especial. Dedicado para una persona especial.</h1>
+    </div>
+
+    <!-- Recuadro para continuar -->
+    <div class="recuadro-continuar">
+      <h1>Presiona el botón para ver la sorpresa. !!!Obvio hasta que no sea tu cumpleaños no funcionar el continuar!!!</h1>
+      <button id="boton-continuar" class="boton-continuar" disabled>Continuar</button>
+    </div>
+  </div>
+
+  <script>
+    // Función para calcular el tiempo restante hasta la fecha objetivo
+    function calcularTiempoRestante() {
+      var fechaObjetivo = new Date("August 1, 2023 00:00:00").getTime();
+      var ahora = new Date().getTime();
+      var tiempoRestante = fechaObjetivo - ahora;
+
+      var segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+      var minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+      var horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+
+      return {
+        'total': tiempoRestante,
+        'dias': dias,
+        'horas': horas,
+        'minutos': minutos,
+        'segundos': segundos
+      };
+    }
+
+    // Función para actualizar el contador en la página
+    function actualizarContador() {
+      var tiempo = calcularTiempoRestante();
+
+      document.getElementById('dias').textContent = tiempo.dias;
+      document.getElementById('horas').textContent = tiempo.horas;
+      document.getElementById('minutos').textContent = tiempo.minutos;
+      document.getElementById('segundos').textContent = tiempo.segundos;
+
+      if (tiempo.total <= 0) {
+        document.getElementById('boton-continuar').disabled = false;
+      }
+
+      if (tiempo.total < 0) {
+        clearInterval(intervalo);
+        document.getElementById('boton-continuar').disabled = false;
+        alert('Feliz cumpleaños, ahora ya puedes continuar presionando el botón');
+      }
+    }
+
+    // Iniciar el contador
+    var intervalo = setInterval(actualizarContador, 1000);
+
+    // Acción al presionar el botón de continuar
+    document.getElementById('boton-continuar').addEventListener('click', function () {
+      if (new Date().getTime() < new Date("August 1, 2023 00:00:00").getTime()) {
+        alert('¡Sorpresa! Tienes que esperar hasta tu cumpleaños jejeje');
+      } else {
+        window.open('https://docs.google.com/document/d/1akGNrT29swfyshXGws1OUiMWqRYKMKXZzeH-rhmxJu8/edit?usp=sharing', '_blank');
+      }
+    });
+  </script>
+</body>
+</html>
